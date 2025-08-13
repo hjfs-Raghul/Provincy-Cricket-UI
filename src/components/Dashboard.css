@@ -1,0 +1,189 @@
+.dashboard {
+  padding: 16px 0;
+}
+
+/* Quick Stats */
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(26, 95, 122, 0.2);
+}
+
+.stat-number {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+/* Sections */
+.matches-section {
+  margin-bottom: 32px;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--dark-gray);
+  padding-left: 4px;
+}
+
+/* Match Cards */
+.match-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 1px solid #f0f0f0;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.match-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.match-card.live {
+  border-left: 4px solid var(--accent-color);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    border-left-color: var(--accent-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  50% { 
+    border-left-color: #e74c3c;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.2);
+  }
+}
+
+.live-indicator {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--accent-color);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.7; }
+}
+
+.match-teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.team {
+  flex: 1;
+  text-align: center;
+}
+
+.team-name {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--dark-gray);
+  margin-bottom: 4px;
+}
+
+.team-score {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.vs {
+  margin: 0 16px;
+  font-weight: 500;
+  color: var(--medium-gray);
+  font-size: 0.9rem;
+}
+
+.match-status {
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--medium-gray);
+  padding-top: 8px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.match-card.live .match-status {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* Upcoming matches */
+.match-card.upcoming {
+  border-left: 4px solid var(--secondary-color);
+}
+
+.match-details {
+  text-align: center;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 12px;
+}
+
+.match-time {
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 4px;
+}
+
+.match-venue {
+  font-size: 0.85rem;
+  color: var(--medium-gray);
+}
+
+/* Mobile optimizations */
+@media (max-width: 480px) {
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+  }
+  
+  .team-name {
+    font-size: 0.85rem;
+  }
+  
+  .team-score {
+    font-size: 1rem;
+  }
+  
+  .vs {
+    margin: 0 12px;
+  }
+} 

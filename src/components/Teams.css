@@ -1,0 +1,279 @@
+.teams {
+  padding: 16px 0;
+}
+
+.page-title {
+  margin-bottom: 20px;
+  color: var(--dark-gray);
+  text-align: center;
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 20px;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.legend-item.qualified .legend-dot {
+  background: var(--secondary-color);
+}
+
+.legend-item.eliminated .legend-dot {
+  background: var(--accent-color);
+}
+
+/* Standings Table */
+.standings-table {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 40px 1fr 32px 32px 32px 40px 50px 80px;
+  padding: 16px 12px;
+  background: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 40px 1fr 32px 32px 32px 40px 50px 80px;
+  padding: 16px 12px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.table-row:hover {
+  background: rgba(248, 249, 250, 0.8);
+}
+
+.table-row.qualified {
+  border-left: 4px solid var(--secondary-color);
+}
+
+.table-row.eliminated {
+  border-left: 4px solid var(--accent-color);
+}
+
+.table-row.middle {
+  border-left: 4px solid var(--warning);
+}
+
+/* Column Styles */
+.position-col,
+.matches-col,
+.won-col,
+.lost-col,
+.points-col,
+.nrr-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.team-col {
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+}
+
+.form-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.position-number {
+  background: var(--light-gray);
+  color: var(--dark-gray);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.table-row.qualified .position-number {
+  background: var(--secondary-color);
+  color: white;
+}
+
+.table-row.eliminated .position-number {
+  background: var(--accent-color);
+  color: white;
+}
+
+.team-name {
+  font-weight: 600;
+  color: var(--dark-gray);
+  font-size: 0.9rem;
+}
+
+.points-number {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.nrr {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.nrr.positive {
+  color: var(--success);
+}
+
+.nrr.negative {
+  color: var(--danger);
+}
+
+/* Form Icons */
+.form-icons {
+  display: flex;
+  gap: 2px;
+}
+
+.form-icon {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.form-icon.w {
+  filter: hue-rotate(120deg);
+}
+
+.form-icon.l {
+  filter: hue-rotate(0deg);
+}
+
+/* Stats Summary */
+.stats-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.stat-item {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(26, 95, 122, 0.2);
+}
+
+.stat-number {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .table-header,
+  .table-row {
+    grid-template-columns: 30px 1fr 24px 24px 24px 32px 40px 60px;
+    padding: 12px 8px;
+    font-size: 0.8rem;
+  }
+  
+  .table-header {
+    font-size: 0.7rem;
+  }
+  
+  .team-name {
+    font-size: 0.8rem;
+  }
+  
+  .position-number {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+  }
+  
+  .points-number {
+    font-size: 1rem;
+  }
+  
+  .form-icons {
+    gap: 1px;
+  }
+  
+  .form-icon {
+    font-size: 0.6rem;
+  }
+  
+  .legend {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .table-header,
+  .table-row {
+    grid-template-columns: 25px 1fr 20px 20px 20px 28px 35px 50px;
+    padding: 10px 6px;
+  }
+  
+  .team-name {
+    font-size: 0.75rem;
+  }
+  
+  .nrr {
+    font-size: 0.75rem;
+  }
+  
+  .form-icon {
+    font-size: 0.5rem;
+  }
+} 
